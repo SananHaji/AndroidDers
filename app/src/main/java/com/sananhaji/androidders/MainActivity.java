@@ -3,6 +3,7 @@ package com.sananhaji.androidders;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
         editor = preferences.edit();
 
         setLastSavedResult(preferences.getString(LAST_SAVED_RESULT, "0"));
+//
+//        CountDownTimer timer = new CountDownTimer(30000, 1000) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                lastSavedResult.setText(""+millisUntilFinished/1000);
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                lastSavedResult.setText("FINISHED");
+//
+//            }
+//        };
+//        timer.start();
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
