@@ -1,22 +1,23 @@
-package com.sananhaji.androidders;
+package com.sananhaji.androidders.ui.activity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import com.sananhaji.androidders.R;
 
 import static com.sananhaji.androidders.utils.Constants.STUDENT_ACTIVITY_RESULT;
 import static com.sananhaji.androidders.utils.Constants.STUDENT_LIST_NAME;
 
-public class MainActivity extends AppCompatActivity {
+public class CalculatorActivity extends AppCompatActivity {
 
     private static final String LAST_SAVED_RESULT = "LAST_SAVED_RESULT";
     private static final int REQ_CODE_NAME = 333;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText numberTwo;
     private Button add;
     private Button multiply;
-    private Button goStudentList;
     private TextView lastSavedResult;
     private int a;
     private int b;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_calculator);
 
         result = findViewById(R.id.result);
         lastSavedResult = findViewById(R.id.last_saved_result);
@@ -46,26 +46,11 @@ public class MainActivity extends AppCompatActivity {
         numberTwo = findViewById(R.id.number_2);
         add = findViewById(R.id.add);
         multiply = findViewById(R.id.multiply);
-        goStudentList = findViewById(R.id.go_student_list);
 
         preferences = getSharedPreferences("lastPreferences", MODE_PRIVATE);
         editor = preferences.edit();
 
         setLastSavedResult(preferences.getString(LAST_SAVED_RESULT, "0"));
-//
-//        CountDownTimer timer = new CountDownTimer(30000, 1000) {
-//            @Override
-//            public void onTick(long millisUntilFinished) {
-//                lastSavedResult.setText(""+millisUntilFinished/1000);
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//                lastSavedResult.setText("FINISHED");
-//
-//            }
-//        };
-//        timer.start();
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,20 +68,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        goStudentList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, StudentListActivity.class);
-                intent.putExtra(STUDENT_LIST_NAME, "TELEBELER");
-//                startActivity(intent);
-                //                startActivity(new Intent(MainActivity.this, StudentListActivity.class));
-                if (numberOne.getText().toString().equals(""))
-                    startActivityForResult(intent, REQ_CODE_NAME);
-                else
-                    startActivityForResult(intent, REQ_CODE_NAME);
-
-            }
-        });
+//        goStudentList.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(CalculatorActivity.this, StudentListActivity.class);
+//                intent.putExtra(STUDENT_LIST_NAME, "TELEBELER");
+////                startActivity(intent);
+//                //                startActivity(new Intent(MainActivity.this, StudentListActivity.class));
+//
+//                startActivityForResult(intent, REQ_CODE_NAME);
+//
+//            }
+//        });
 
     }
 
@@ -135,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 if (data != null) {
                     lastSavedResult.setText(data.getStringExtra(STUDENT_ACTIVITY_RESULT));
                 }
-            } else if(resultCode==RESULT_CANCELED){
+            } else if (resultCode == RESULT_CANCELED) {
                 if (data != null) {
                     lastSavedResult.setText("TELEBEBE BOSDUR");
                 }

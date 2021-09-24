@@ -1,16 +1,14 @@
-package com.sananhaji.androidders;
+package com.sananhaji.androidders.ui.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.sananhaji.androidders.databinding.ActivityStudentListBinding;
 import com.sananhaji.androidders.models.Student;
 
 import java.util.ArrayList;
@@ -20,23 +18,17 @@ import static com.sananhaji.androidders.utils.Constants.STUDENT_LIST_KEY;
 
 public class StudentListActivity extends AppCompatActivity {
     private static final String TAG = "StudentListActivity";
-    TextView textView;
-    EditText name, surname;
-    Button addStudent;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    ActivityStudentListBinding binding;
     private List<Student> students;
     private String studentString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_list);
-
-        textView = findViewById(R.id.textView);
-        name = findViewById(R.id.name);
-        surname = findViewById(R.id.surname);
-        addStudent = findViewById(R.id.add_student);
+        binding = ActivityStudentListBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         preferences = getSharedPreferences("lastPreferences", MODE_PRIVATE);
         editor = preferences.edit();
@@ -56,9 +48,7 @@ public class StudentListActivity extends AppCompatActivity {
 //        textView.setText(getIntent().getStringExtra(STUDENT_LIST_NAME));
 
 
-        addStudent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    binding.addStudent.setOnClickListener(v -> {
 //                Intent returnIntent = new Intent();
 //                returnIntent.putExtra(STUDENT_ACTIVITY_RESULT, name.getText().toString());
 //
@@ -67,10 +57,9 @@ public class StudentListActivity extends AppCompatActivity {
 //                else
 //                    setResult(RESULT_CANCELED, returnIntent);
 //                finish();
-                Student student = new Student(name.getText().toString(), surname.getText().toString());
-                students.add(student);
-                showList(students);
-            }
+            Student student = new Student(binding.name.getText().toString(), binding.surname.getText().toString());
+            students.add(student);
+            showList(students);
         });
 
     }
@@ -87,7 +76,7 @@ public class StudentListActivity extends AppCompatActivity {
             for (Student student : students) {
                 studentString = studentString.concat(student.getName()).concat(" ").concat(student.getSurname()).concat("\n");
             }
-            textView.setText(studentString);
+            binding.textView.setText(studentString);
         }
     }
 }
