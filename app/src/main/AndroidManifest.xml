@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDers">
-        <activity android:name=".ui.activity.TestActivity"></activity>
+        <activity android:name=".ui.activity.viewpager.ViewPagerActivity"></activity>
+        <activity android:name=".ui.activity.TestActivity" />
         <activity android:name=".ui.activity.CalculatorActivity" />
         <activity android:name=".ui.activity.StudentListActivity" />
         <activity android:name=".ui.activity.MainActivity">

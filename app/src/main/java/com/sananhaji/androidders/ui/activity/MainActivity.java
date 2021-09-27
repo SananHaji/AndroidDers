@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sananhaji.androidders.databinding.ActivityMainBinding;
+import com.sananhaji.androidders.ui.activity.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         binding.calculator.setOnClickListener(v -> startActivity(new Intent(this, CalculatorActivity.class)));
         binding.studentList.setOnClickListener(v -> startActivity(new Intent(this, StudentListActivity.class)));
         binding.test.setOnClickListener(v -> startActivity(new Intent(this, TestActivity.class)));
+        binding.viewPager.setOnClickListener(v -> startActivity(new Intent(this, ViewPagerActivity.class)));
 
     }
 }
