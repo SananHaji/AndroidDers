@@ -6,10 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sananhaji.androidders.databinding.ActivityMainBinding;
-import com.sananhaji.androidders.ui.activity.viewpager.DateTimeActivity;
 import com.sananhaji.androidders.ui.activity.viewpager.ViewPagerActivity;
-import com.sananhaji.androidders.ui.activity.viewpager.WebViewActivity;
-import com.sananhaji.androidders.ui.activity.viewpager.WidgetsActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         binding.widgets.setOnClickListener(v -> startActivity(new Intent(this, WidgetsActivity.class)));
         binding.webview.setOnClickListener(v -> startActivity(new Intent(this, WebViewActivity.class)));
         binding.date.setOnClickListener(v -> startActivity(new Intent(this, DateTimeActivity.class)));
+        binding.listActivity.setOnClickListener(v -> startActivity(new Intent(this, ListActivity.class)));
+        binding.spinner.setOnClickListener(v -> startActivity(new Intent(this, SpinnerActivity.class)));
+        binding.menu.setOnClickListener(v -> startActivity(new Intent(this, ToolbarActivity.class)));
 
     }
 }

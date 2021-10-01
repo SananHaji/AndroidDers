@@ -57,5 +57,26 @@
             android:layout_height="wrap_content"
             android:text="date" />
 
+
+        <Button
+            android:id="@+id/list_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="list activity" />
+
+
+        <Button
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="spinner" />
+
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="menu" />
+
     </LinearLayout>
 </ScrollView>

@@ -1,4 +1,4 @@
-package com.sananhaji.androidders.ui.activity.viewpager;
+package com.sananhaji.androidders.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -11,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDers">
-        <activity android:name=".ui.activity.viewpager.DateTimeActivity"></activity>
-        <activity android:name=".ui.activity.viewpager.WebViewActivity" />
-        <activity android:name=".ui.activity.viewpager.WidgetsActivity" />
+        <activity android:name=".ui.activity.ToolbarActivity"></activity>
+        <activity android:name=".ui.activity.SpinnerActivity" />
+        <activity android:name=".ui.activity.ListActivity" />
+        <activity android:name=".ui.activity.DateTimeActivity" />
+        <activity android:name=".ui.activity.WebViewActivity" />
+        <activity android:name=".ui.activity.WidgetsActivity" />
         <activity android:name=".ui.activity.viewpager.ViewPagerActivity" />
         <activity android:name=".ui.activity.TestActivity" />
         <activity android:name=".ui.activity.CalculatorActivity" />

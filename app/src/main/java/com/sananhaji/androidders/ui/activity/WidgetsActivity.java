@@ -1,4 +1,4 @@
-package com.sananhaji.androidders.ui.activity.viewpager;
+package com.sananhaji.androidders.ui.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
