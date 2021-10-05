@@ -1,12 +1,27 @@
 package com.sananhaji.androidders.models;
 
+import androidx.annotation.DrawableRes;
+
 public class Student {
+    private @DrawableRes int imageId;
     private String name;
     private String surname;
 
-    public Student(String name, String surname) {
+    public Student() {
+    }
+
+    public Student(@DrawableRes int imageId, String name, String surname) {
+        this.imageId = imageId;
         this.name = name;
         this.surname = surname;
+    }
+
+    public @DrawableRes int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(@DrawableRes int imageId) {
+        this.imageId = imageId;
     }
 
     public String getName() {
@@ -23,13 +38,5 @@ public class Student {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
     }
 }

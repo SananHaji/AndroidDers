@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDers">
-        <activity android:name=".ui.activity.ToolbarActivity"></activity>
+        <activity android:name=".ui.activity.currencies.CurrenciesActivity"></activity>
+        <activity android:name=".ui.activity.recycler.RecyclerActivity" />
+        <activity android:name=".ui.activity.ToolbarActivity" />
         <activity android:name=".ui.activity.SpinnerActivity" />
         <activity android:name=".ui.activity.ListActivity" />
         <activity android:name=".ui.activity.DateTimeActivity" />

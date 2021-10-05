@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.sananhaji.androidders.R;
 import com.sananhaji.androidders.databinding.ActivityStudentListBinding;
 import com.sananhaji.androidders.models.Student;
 
@@ -57,7 +58,8 @@ public class StudentListActivity extends AppCompatActivity {
 //                else
 //                    setResult(RESULT_CANCELED, returnIntent);
 //                finish();
-            Student student = new Student(binding.name.getText().toString(), binding.surname.getText().toString());
+
+            Student student = new Student(R.drawable.ic_success, binding.name.getText().toString(), binding.surname.getText().toString());
             students.add(student);
             showList(students);
         });

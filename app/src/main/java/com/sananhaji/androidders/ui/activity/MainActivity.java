@@ -6,6 +6,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sananhaji.androidders.databinding.ActivityMainBinding;
+import com.sananhaji.androidders.models.Currency;
+import com.sananhaji.androidders.ui.activity.currencies.CurrenciesActivity;
+import com.sananhaji.androidders.ui.activity.recycler.RecyclerActivity;
 import com.sananhaji.androidders.ui.activity.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         binding.listActivity.setOnClickListener(v -> startActivity(new Intent(this, ListActivity.class)));
         binding.spinner.setOnClickListener(v -> startActivity(new Intent(this, SpinnerActivity.class)));
         binding.menu.setOnClickListener(v -> startActivity(new Intent(this, ToolbarActivity.class)));
+        binding.students.setOnClickListener(v -> startActivity(new Intent(this, RecyclerActivity.class)));
+        binding.currencies.setOnClickListener(v -> startActivity(new Intent(this, CurrenciesActivity.class)));
 
     }
 }
