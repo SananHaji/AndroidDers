@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sananhaji.androidders.R;
+import com.sananhaji.androidders.databinding.ActivityCalculatorBinding;
 
 import static com.sananhaji.androidders.utils.Constants.STUDENT_ACTIVITY_RESULT;
 import static com.sananhaji.androidders.utils.Constants.STUDENT_LIST_NAME;
@@ -23,14 +24,9 @@ public class CalculatorActivity extends AppCompatActivity {
     private static final int REQ_CODE_NAME = 333;
     private static final int REQ_CODE_SURNAME = 334;
 
+    ActivityCalculatorBinding binding;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-    private TextView result;
-    private EditText numberOne;
-    private EditText numberTwo;
-    private Button add;
-    private Button multiply;
-    private TextView lastSavedResult;
     private int a;
     private int b;
 
@@ -38,21 +34,15 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculator);
-
-        result = findViewById(R.id.result);
-        lastSavedResult = findViewById(R.id.last_saved_result);
-        numberOne = findViewById(R.id.number_1);
-        numberTwo = findViewById(R.id.number_2);
-        add = findViewById(R.id.add);
-        multiply = findViewById(R.id.multiply);
+        binding = ActivityCalculatorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         preferences = getSharedPreferences("lastPreferences", MODE_PRIVATE);
         editor = preferences.edit();
 
         setLastSavedResult(preferences.getString(LAST_SAVED_RESULT, "0"));
 
-        add.setOnClickListener(new View.OnClickListener() {
+        binding.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initValues();
@@ -60,7 +50,7 @@ public class CalculatorActivity extends AppCompatActivity {
             }
         });
 
-        multiply.setOnClickListener(new View.OnClickListener() {
+        binding.multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 initValues();
@@ -84,27 +74,27 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void initValues() {
-        if (!numberOne.getText().toString().equals("")) {
-            a = Integer.parseInt(numberOne.getText().toString());
+        if (!binding.number1.getText().toString().equals("")) {
+            a = Integer.parseInt(binding.number1.getText().toString());
         } else {
             a = 0;
         }
 
-        if (!numberTwo.getText().toString().equals("")) {
-            b = Integer.parseInt(numberTwo.getText().toString());
+        if (!binding.number2.getText().toString().equals("")) {
+            b = Integer.parseInt(binding.number2.getText().toString());
         } else {
             b = 0;
         }
     }
 
     private void setResult(String text) {
-        result.setText(text);
+        binding.result.setText(text);
         setLastSavedResult(text);
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
     private void setLastSavedResult(String text) {
-        lastSavedResult.setText(text);
+        binding.lastSavedResult.setText(text);
         editor.putString(LAST_SAVED_RESULT, text);
         editor.commit();
     }
@@ -116,11 +106,11 @@ public class CalculatorActivity extends AppCompatActivity {
         if (requestCode == REQ_CODE_NAME) {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
-                    lastSavedResult.setText(data.getStringExtra(STUDENT_ACTIVITY_RESULT));
+                    binding.lastSavedResult.setText(data.getStringExtra(STUDENT_ACTIVITY_RESULT));
                 }
             } else if (resultCode == RESULT_CANCELED) {
                 if (data != null) {
-                    lastSavedResult.setText("TELEBEBE BOSDUR");
+                    binding.lastSavedResult.setText("TELEBEBE BOSDUR");
                 }
             }
         }
