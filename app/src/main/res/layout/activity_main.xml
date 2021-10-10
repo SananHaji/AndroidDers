@@ -79,17 +79,31 @@
             android:text="menu" />
 
 
-
         <Button
             android:id="@+id/students"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="students" />
+
+
         <Button
             android:id="@+id/currencies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="currencies" />
+
+
+        <Button
+            android:id="@+id/fragment_tutorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fragment_tutorial" />
+
+        <Button
+            android:id="@+id/fragment_tutorial_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fragment_tutorial_2" />
 
     </LinearLayout>
 </ScrollView>

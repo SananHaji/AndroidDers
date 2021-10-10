@@ -19,8 +19,8 @@ public class ViewPagerActivity extends AppCompatActivity {
 
         binding.viewPager.setAdapter(new PagerAdapter(this));
         new TabLayoutMediator(binding.tabLayout, binding.viewPager, (tab, position) -> {
-           tab.setText(""+position);
-        });
+           tab.setText("TAB: "+position);
+        }).attach();
 
     }
 }
