@@ -18,6 +18,9 @@
             android:name=".ui.activity.person.PersonActivity"
             android:exported="true" />
         <activity android:name=".ui.activity.currencies.CurrenciesActivity" />
+        <activity android:name=".ui.activity.fragmenttutorial2.FragmentTutorial2Activity"></activity>
+        <activity android:name=".ui.activity.fragmenttutorial.FragmentTutorialActivity" />
+        <activity android:name=".ui.activity.currencies.CurrenciesActivity" />
         <activity android:name=".ui.activity.recycler.RecyclerActivity" />
         <activity android:name=".ui.activity.ToolbarActivity" />
         <activity android:name=".ui.activity.SpinnerActivity" />
