@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_star"
+        android:icon="@drawable/ic_baseline_star_outline_24"
+        android:title="star" />
+    <item
+        android:id="@+id/nav_handball"
+        android:icon="@drawable/ic_baseline_sports_handball_24"
+        android:title="handball" />
+    <item
+        android:id="@+id/nav_style"
+        android:icon="@drawable/ic_baseline_style_24"
+        android:title="style" />
+</menu>

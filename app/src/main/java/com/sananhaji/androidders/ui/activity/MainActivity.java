@@ -12,6 +12,7 @@ import com.sananhaji.androidders.ui.activity.person.PersonActivity;
 import com.sananhaji.androidders.ui.activity.fragmenttutorial.FragmentTutorialActivity;
 import com.sananhaji.androidders.ui.activity.fragmenttutorial2.FragmentTutorial2Activity;
 import com.sananhaji.androidders.ui.activity.recycler.RecyclerActivity;
+import com.sananhaji.androidders.ui.activity.tablayoutviewpager2.TabLayoutActivity;
 import com.sananhaji.androidders.ui.activity.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         binding.fragmentTutorial.setOnClickListener(v -> startActivity(new Intent(this, FragmentTutorialActivity.class)));
         binding.fragmentTutorial2.setOnClickListener(v -> startActivity(new Intent(this, FragmentTutorial2Activity.class)));
         binding.person.setOnClickListener(v -> startActivity(new Intent(this, PersonActivity.class)));
+        binding.tabLayoutViewpager2.setOnClickListener(v -> startActivity(new Intent(this, TabLayoutActivity.class)));
+        binding.bottomNavigationView.setOnClickListener(v -> startActivity(new Intent(this, BottomNavigationViewActivity.class)));
 
     }
 }

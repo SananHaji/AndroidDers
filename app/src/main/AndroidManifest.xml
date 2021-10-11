@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDers">
+        <activity android:name=".ui.activity.BottomNavigationViewActivity"></activity>
+        <activity android:name=".ui.activity.tablayoutviewpager2.TabLayoutActivity" />
         <activity
             android:name=".ui.activity.person.AddPersonActivity"
             android:exported="true" />
@@ -18,7 +20,7 @@
             android:name=".ui.activity.person.PersonActivity"
             android:exported="true" />
         <activity android:name=".ui.activity.currencies.CurrenciesActivity" />
-        <activity android:name=".ui.activity.fragmenttutorial2.FragmentTutorial2Activity"/>
+        <activity android:name=".ui.activity.fragmenttutorial2.FragmentTutorial2Activity" />
         <activity android:name=".ui.activity.fragmenttutorial.FragmentTutorialActivity" />
         <activity android:name=".ui.activity.recycler.RecyclerActivity" />
         <activity android:name=".ui.activity.ToolbarActivity" />

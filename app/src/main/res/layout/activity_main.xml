@@ -110,5 +110,17 @@
             android:layout_height="wrap_content"
             android:text="fragment_tutorial_2" />
 
+        <Button
+            android:id="@+id/tabLayout_viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tabLayout_viewpager2" />
+
+        <Button
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bottomNavigationView" />
+
     </LinearLayout>
 </ScrollView>
